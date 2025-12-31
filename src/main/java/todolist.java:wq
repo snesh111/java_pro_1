@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class todolist {
+
+    public static void main(String[] args) {
+
+        ArrayList<String> todos = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\n-- TODO LIST ---");
+            System.out.println("1. Add Task");
+            System.out.println("2. View Tasks");
+            System.out.println("3. Delete Task");
+            System.out.println("4. Exit");
+            System.out.print("Choose an option: ");
+
+            int choice = sc.nextInt();
+            sc.nextLine(); 
+
+            switch (choice) {
+
+                case 1:
+                    System.out.print("Enter task: ");
+                    String task = sc.nextLine();
+                    todos.add(task);
+                    System.out.println("Task added!");
+                    break;
+
+                case 2:
+                    if (todos.isEmpty()) {
+                        System.out.println("No tasks found.");
+                    } else {
+                        System.out.println("\nYour Tasks:");
+                        for (int i = 0; i < todos.size(); i++) {
+                            System.out.println((i + 1) + ". " + todos.get(i));
+                        }
+                    }
+                    break;
+
+                case 3:
+                    System.out.print("Enter task number to delete: ");
+                    int index = sc.nextInt();
+                    if (index > 0 && index <= todos.size()) {
+                        todos.remove(index - 1);
+                        System.out.println("Task deleted!");
+                    } else {
+                        System.out.println("Invalid task number.");
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Exiting... Bye!");
+                    sc.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid choice Try again.");
+
+            }
+        }
+    }
+}
+
+
+
+
