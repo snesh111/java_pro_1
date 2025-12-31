@@ -17,7 +17,7 @@ public class todolist {
             System.out.print("Choose an option: ");
 
             int choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+            sc.nextLine(); 
 
             switch (choice) {
 
@@ -56,9 +56,13 @@ public class todolist {
                     return;
 
                 default:
-                    System.out.println("Invalid choice. Try again.");
+                    System.out.println("Invalid choice Try again.");
+
             }
         }
     }
 }
+
+
+
 
